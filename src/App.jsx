@@ -336,7 +336,7 @@ export default function App() {
               <g style={{transform: animate ? 'translateY(0)' : 'translateY(-20px)', opacity: animate ? 1 : 0, transition: 'all 1s 0.5s'}}>
                  <circle cx="160" cy="140" r="40" fill="#f8fafc" stroke="#cbd5e1" strokeWidth="4" strokeDasharray="6,6" />
                  <text x="160" y="145" textAnchor="middle" fill="#64748b" className="font-bold text-2xl">?</text>
-                 <text x="160" y="195" textAnchor="middle" fill="#64748b" className="font-bold text-xs">chọn 1 sản phẩm</text>
+                 <text x="160" y="195" textAnchor="middle" fill="#64748b" className="font-bold text-xs">Chọn 1 sản phẩm</text>
               </g>
             </g>
           )}
@@ -375,7 +375,7 @@ export default function App() {
                 <text x="220" y="-5" textAnchor="middle" fill="#ef4444" className="font-bold text-[11px]">0.02</text>
                 
                 <rect x="270" y="-10" width="60" height="30" fill="#fee2e2" stroke="#ef4444" strokeWidth="2" rx="4" />
-                <text x="300" y="10" textAnchor="middle" fill="#ef4444" className="font-bold text-sm">lỗi</text>
+                <text x="300" y="10" textAnchor="middle" fill="#ef4444" className="font-bold text-sm">Lỗi</text>
               </g>
             </g>
           )}
@@ -391,7 +391,7 @@ export default function App() {
               
               <line x1="180" y1="5" x2="260" y2="5" stroke="#ef4444" strokeWidth="3" markerEnd="url(#arrow-red)" />
               <rect x="270" y="-10" width="60" height="30" fill="#fee2e2" stroke="#ef4444" strokeWidth="2" rx="4" />
-              <text x="300" y="10" textAnchor="middle" fill="#ef4444" className="font-bold text-sm">lỗi</text>
+              <text x="300" y="10" textAnchor="middle" fill="#ef4444" className="font-bold text-sm">Lỗi</text>
               
               <rect x="60" y="50" width="240" height="40" fill="#1e293b" rx="8" />
               <text x="180" y="75" textAnchor="middle" fill="#facc15" className="font-bold tracking-widest">0.6 × 0.02 = 0.012</text>
@@ -414,7 +414,7 @@ export default function App() {
               <text x="195" y="-5" textAnchor="middle" fill="#ef4444" className="font-bold text-[10px]">0.02</text>
               
               <rect x="240" y="-10" width="80" height="30" fill="#fee2e2" stroke="#ef4444" strokeWidth="2" rx="4" />
-              <text x="280" y="10" textAnchor="middle" fill="#ef4444" className="font-bold text-[10px]">lỗi (0.012)</text>
+              <text x="280" y="10" textAnchor="middle" fill="#ef4444" className="font-bold text-[10px]">Lỗi (0.012)</text>
 
               {/* Path 2 */}
               <line x1="30" y1="55" x2="110" y2="90" stroke="#f59e0b" strokeWidth="2" />
@@ -427,7 +427,7 @@ export default function App() {
               <text x="195" y="85" textAnchor="middle" fill="#ef4444" className="font-bold text-[10px]">0.05</text>
               
               <rect x="240" y="80" width="80" height="30" fill="#fee2e2" stroke="#ef4444" strokeWidth="2" rx="4" />
-              <text x="280" y="100" textAnchor="middle" fill="#ef4444" className="font-bold text-[10px]">lỗi (0.020)</text>
+              <text x="280" y="100" textAnchor="middle" fill="#ef4444" className="font-bold text-[10px]">Lỗi (0.020)</text>
 
               {/* Question Box */}
               <g style={{opacity: animate ? 1 : 0, transition: 'opacity 1s 1.5s'}}>
@@ -447,30 +447,34 @@ export default function App() {
                
                <rect x="70" y="110" width="100" height="40" rx="8" fill="#ef4444" />
                <text x="120" y="135" textAnchor="middle" fill="white" className="font-bold text-xl tracking-widest">0.032</text>
-               <text x="120" y="170" textAnchor="middle" fill="#ef4444" className="font-bold text-xs uppercase tracking-widest">Tổng phế phẩm</text>
+               <text x="120" y="170" textAnchor="middle" fill="#ef4444" className="font-bold text-xs tracking-widest">Tổng phế phẩm</text>
             </g>
           )}
 
-          {/* Node 7: Bayes Question */}
+          {/* Node 7: Bayes Question - Redesigned to avoid overflow and prevent being "too obvious" */}
           {type === "bayes-question" && (
-            <g transform="translate(40, 50)" style={{opacity: animate ? 1 : 0, transition: 'opacity 0.8s'}}>
-              <circle cx="150" cy="100" r="80" fill="#fee2e2" stroke="#ef4444" strokeWidth="4" />
-              <text x="150" y="45" textAnchor="middle" fill="#ef4444" className="font-bold text-xs">Tập hợp điện thoại lỗi</text>
+            <g transform="translate(50, 60)" style={{opacity: animate ? 1 : 0, transition: 'opacity 0.8s'}}>
+              {/* Moved text up to prevent clipping with circle */}
+              <text x="150" y="-15" textAnchor="middle" fill="#ef4444" className="font-bold text-sm">Tập hợp điện thoại lỗi</text>
               
-              <path d="M 150 20 A 80 80 0 0 0 80 140 A 80 80 0 0 0 220 140 Z" fill="#e0e7ff" />
-              <path d="M 150 20 L 150 180" stroke="#ef4444" strokeWidth="4" />
+              <circle cx="150" cy="80" r="75" fill="#fee2e2" stroke="#ef4444" strokeWidth="4" />
+              
+              {/* Semi-circle for Machine I */}
+              <path d="M 150 5 A 75 75 0 0 0 75 80 A 75 75 0 0 0 150 155 Z" fill="#e0e7ff" />
+              
+              {/* Center dividing line */}
+              <path d="M 150 5 L 150 155" stroke="#ef4444" strokeWidth="4" />
 
-              <text x="110" y="110" textAnchor="middle" fill="#4f46e5" className="font-bold text-xs">Máy I</text>
-              <text x="110" y="125" textAnchor="middle" fill="#4f46e5" className="font-bold text-[10px]">(0.012)</text>
-
-              <text x="190" y="110" textAnchor="middle" fill="#d97706" className="font-bold text-xs">Máy II</text>
-              <text x="190" y="125" textAnchor="middle" fill="#d97706" className="font-bold text-[10px]">(0.020)</text>
+              {/* Labels without explicit probabilities to encourage recall */}
+              <text x="110" y="85" textAnchor="middle" fill="#4f46e5" className="font-bold text-sm">Máy I</text>
+              <text x="190" y="85" textAnchor="middle" fill="#d97706" className="font-bold text-sm">Máy II</text>
 
               <g style={{opacity: animate ? 1 : 0, transition: 'opacity 1s 1s'}}>
-                 <circle cx="110" cy="115" r="45" fill="none" stroke="#4f46e5" strokeWidth="4" strokeDasharray="8,4" />
-                 <path d="M 150 115 L 240 180" stroke="#4f46e5" strokeWidth="2" strokeDasharray="4,4" />
-                 <rect x="220" y="180" width="100" height="30" fill="#4f46e5" rx="4" />
-                 <text x="270" y="200" textAnchor="middle" fill="white" className="font-bold text-sm">tỉ lệ = ?</text>
+                 {/* Highlight selection on Machine I */}
+                 <circle cx="110" cy="80" r="40" fill="none" stroke="#4f46e5" strokeWidth="4" strokeDasharray="8,4" />
+                 <path d="M 145 100 L 230 160" stroke="#4f46e5" strokeWidth="2" strokeDasharray="4,4" />
+                 <rect x="210" y="160" width="80" height="30" fill="#4f46e5" rx="6" />
+                 <text x="250" y="180" textAnchor="middle" fill="white" className="font-bold text-sm">Tỉ lệ = ?</text>
               </g>
             </g>
           )}
@@ -479,7 +483,7 @@ export default function App() {
           {type === "bayes-zoom" && (
             <g transform="translate(80, 80)" style={{opacity: animate ? 1 : 0, transition: 'opacity 0.8s'}}>
                <rect x="0" y="0" width="240" height="80" rx="12" fill="#1e293b" />
-               <text x="120" y="30" textAnchor="middle" fill="#94a3b8" className="font-bold text-xs uppercase tracking-widest">Định lý Bayes</text>
+               <text x="120" y="30" textAnchor="middle" fill="#94a3b8" className="font-bold text-xs tracking-widest">Định lý Bayes</text>
                <text x="120" y="60" textAnchor="middle" fill="#facc15" className="font-bold font-serif text-2xl">0.012 / 0.032</text>
                
                <line x1="120" y1="90" x2="120" y2="120" stroke="#94a3b8" strokeWidth="3" markerEnd="url(#arrow-ind)" />
@@ -505,7 +509,7 @@ export default function App() {
         </svg>
 
         <p className="mt-4 text-[11px] font-medium text-indigo-600/70 italic flex items-center gap-2 bg-indigo-50 px-3 py-1 rounded-full">
-          <Maximize size={12}/> Mô phỏng chương trình phân nhánh (Branching)
+          <Maximize size={12}/> Mô phỏng chương trình phân nhánh
         </p>
       </div>
     );
@@ -526,7 +530,7 @@ export default function App() {
           <div className="p-8 md:p-10 flex flex-col h-full overflow-y-auto text-left">
             <div className={`flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] mb-4 ${currentNode.isRemedial ? 'text-amber-400' : 'text-indigo-400'}`}>
               <span className={`w-2 h-2 rounded-full animate-pulse ${currentNode.isRemedial ? 'bg-amber-400' : 'bg-indigo-400'}`}></span>
-              {currentNode.isRemedial ? 'Liều phụ đạo (Remedial dose)' : 'Liều chính (Main path)'}
+              {currentNode.isRemedial ? 'Nhánh phụ đạo' : 'Nhánh chính'}
             </div>
             
             <h2 className="text-xl font-bold mb-6 text-white leading-tight">{currentNode.title}</h2>

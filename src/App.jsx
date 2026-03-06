@@ -205,7 +205,7 @@ export default function App() {
                 <GitMerge size={16} /> Yêu cầu 1
               </h3>
               <p className="text-slate-700 font-medium leading-relaxed text-sm md:text-base">
-                Hãy xây dựng một đoạn <strong>chương trình có phân nhánh</strong> gồm ít nhất 7 liều về nội dung môn Toán ở trung học phổ thông. (Áp dụng lý thuyết Crowder: rẽ nhánh tùy thuộc vào đáp án của người học).
+                Hãy xây dựng một đoạn chương trình có phân nhánh gồm ít nhất 7 liều (khuyến khích nhiều liều hơn) về nội dung môn toán ở trung học phổ thông.
               </p>
             </div>
 
@@ -227,7 +227,7 @@ export default function App() {
                  className="group bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-12 rounded-full transition-all text-lg shadow-lg shadow-indigo-600/30 flex items-center gap-3 hover:-translate-y-1"
                >
                  <Play size={24} fill="currentColor" className="group-hover:scale-110 transition-transform" />
-                 Bắt đầu thử thách
+                 Bắt đầu
                </button>
             </div>
           </div>

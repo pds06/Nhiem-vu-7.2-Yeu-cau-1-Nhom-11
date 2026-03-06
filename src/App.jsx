@@ -23,7 +23,7 @@ const branchedProgramData = [
     id: 2,
     type: 'remedial',
     isRemedial: true,
-    title: "Liều 2 (phụ đạo): Hiểu về xác suất %",
+    title: "Góc phụ đạo 1: Hiểu về xác suất %",
     info: "Bạn đã nhầm lẫn khi chuyển đổi phần trăm. Trong toán học, 'phần trăm' (%) nghĩa là chia cho 100. \n\nSản lượng của Máy I là 60%. Khi quy đổi ra xác suất (thang đo từ 0 đến 1), ta lấy: 60 ÷ 100 = 0.6. \nTương tự, Máy II sản xuất 40% (vì 100% - 60% = 40%), nên xác suất của Máy II là 0.4.",
     question: "Hãy ghi nhớ: P(Máy I) = 0.6 và P(Máy II) = 0.4. Nhấn nút bên dưới để quay lại mạch kiến thức chính.",
     correctNext: 3, 
@@ -33,7 +33,7 @@ const branchedProgramData = [
     id: 3,
     type: 'question',
     isRemedial: false,
-    title: "Liều 3: Xác suất giao (quy tắc nhân)",
+    title: "Liều 2: Xác suất giao (quy tắc nhân)",
     info: "Ta đã có P(Máy I) = 0.6. \nBiết thêm rằng: tỉ lệ sản xuất ra điện thoại bị lỗi (phế phẩm) của Máy I là 2%. Nghĩa là nếu biết chắc điện thoại từ Máy I, xác suất lỗi là 0.02.",
     question: "Hãy tính xác suất để lấy ngẫu nhiên 1 chiếc điện thoại trong kho mà nó 'vừa thuộc Máy I, vừa bị lỗi'? (Nhập số thập phân)",
     inputType: "text",
@@ -49,7 +49,7 @@ const branchedProgramData = [
     id: 4,
     type: 'remedial',
     isRemedial: true,
-    title: "Liều 4 (phụ đạo): Quy tắc nhân trên sơ đồ cây",
+    title: "Góc phụ đạo 2: Quy tắc nhân trên sơ đồ cây",
     info: "Để một biến cố xảy ra theo chuỗi (vừa từ Máy I -> vừa bị lỗi), ta phải dùng quy tắc nhân: \nP(Máy I ∩ Lỗi) = P(Máy I) × P(Lỗi | Máy I)\n\nCụ thể ở đây:\n- Xác suất rơi vào Máy I: 0.6\n- Xác suất bị lỗi tại Máy I: 2% = 0.02\n=> Xác suất chung: 0.6 × 0.02 = 0.012.",
     question: "Tích của các nhánh trên sơ đồ cây chính là xác suất của biến cố giao. Hãy tiếp tục để áp dụng nó!",
     correctNext: 5,
@@ -59,7 +59,7 @@ const branchedProgramData = [
     id: 5,
     type: 'question',
     isRemedial: false,
-    title: "Liều 5: Xác suất toàn phần",
+    title: "Liều 3: Xác suất toàn phần",
     info: "Bạn đã biết nhóm phế phẩm từ Máy I chiếm tỉ lệ 0.012 (tức 1.2% toàn nhà máy). \nGiờ xét Máy II: sản lượng chiếm 40% (0.4) và tỉ lệ làm ra lỗi của Máy II là 5% (0.05).",
     question: "Hỏi xác suất để bốc ngẫu nhiên trúng 1 chiếc điện thoại bị lỗi (bất kể từ máy nào) là bao nhiêu?",
     inputType: "text",
@@ -75,7 +75,7 @@ const branchedProgramData = [
     id: 6,
     type: 'remedial',
     isRemedial: true,
-    title: "Liều 6 (phụ đạo): Công thức xác suất toàn phần",
+    title: "Góc phụ đạo 3: Công thức xác suất toàn phần",
     info: "Điện thoại bị lỗi có thể xuất phát từ Máy I hoặc Máy II. Bạn cần tính xác suất của từng nhánh rồi cộng lại:\n\n1. Nhánh Máy I bị lỗi: 0.6 × 0.02 = 0.012\n2. Nhánh Máy II bị lỗi: 0.4 × 0.05 = 0.020\n\n=> Xác suất toàn phần P(Lỗi) = 0.012 + 0.020 = 0.032.",
     question: "Vậy, trung bình cứ 1000 điện thoại thì nhà máy có 32 chiếc bị lỗi. Ghi nhớ số 0.032 này nhé!",
     correctNext: 7,
@@ -85,7 +85,7 @@ const branchedProgramData = [
     id: 7,
     type: 'question',
     isRemedial: false,
-    title: "Liều 7: Suy luận ngược (định lý Bayes)",
+    title: "Liều 4: Suy luận ngược (định lý Bayes)",
     info: "Tình huống thực tế: Một khách hàng mua phải 1 chiếc điện thoại bị lỗi (biến cố lỗi đã chắc chắn xảy ra). Khách hàng muốn kiện dây chuyền sản xuất.",
     question: "Xác suất để chiếc điện thoại lỗi này có nguồn gốc từ Máy I là bao nhiêu? (Nhập dưới dạng phân số tối giản a/b, VD: 1/2)",
     inputType: "text",
@@ -101,7 +101,7 @@ const branchedProgramData = [
     id: 8,
     type: 'remedial',
     isRemedial: true,
-    title: "Liều 8 (phụ đạo): Thu hẹp không gian mẫu",
+    title: "Góc phụ đạo 4: Thu hẹp không gian mẫu",
     info: "Vì chiếc điện thoại đã bị lỗi, nên không gian mẫu của chúng ta bị thu hẹp lại, không còn là 100% nhà máy nữa, mà chỉ còn là tập hợp các điện thoại lỗi (chiếm 0.032).\n\nTrong tập hợp 0.032 nhỏ bé này, phần đóng góp của Máy I là bao nhiêu? Đó là 0.012.\n\n=> Xác suất P(Máy I | Lỗi) = 0.012 / 0.032 = 12 / 32 = 3 / 8.",
     question: "Đây chính là cốt lõi của định lý Bayes: Lấy 'nhánh cần tính' chia cho 'tổng tất cả các nhánh'.",
     correctNext: 9,
@@ -259,10 +259,11 @@ export default function App() {
               {learningPath.map((nodeId, index) => {
                 const nodeRef = branchedProgramData.find(n => n.id === nodeId);
                 const isRemedial = nodeRef?.isRemedial;
+                const shortTitle = nodeRef?.title.split(':')[0] || `Liều ${nodeId}`;
                 return (
                   <React.Fragment key={`path-${index}`}>
                     <span className={`px-3 py-1 rounded-full border shadow-sm ${isRemedial ? 'bg-amber-100 border-amber-300 text-amber-800' : 'bg-indigo-100 border-indigo-300 text-indigo-800'}`}>
-                      {isRemedial ? `Phụ đạo ${nodeId}` : `Liều ${nodeId}`}
+                      {shortTitle}
                     </span>
                     {index < learningPath.length - 1 && <ArrowRight size={14} className="text-slate-400" />}
                   </React.Fragment>
